@@ -31,7 +31,7 @@ function wiki_info()
 		"authorsite"	=> "http://jonesboard.de/",
 		"version"		=> "1.2.2",
 		"guid" 			=> "0b842d4741fc27e460013732dd5d6d52",
-		"compatibility" => "16*"
+		"compatibility" => "16*,18*"
 	);
 }
 
@@ -923,7 +923,7 @@ function wiki_templates($install=false)
     $PL->templates("wiki",
                    "Wiki",
                    array(
-    				/* Hauptseite (Kategorien & Mülleimer) */
+    				/* Hauptseite (Kategorien & MÃ¼lleimer) */
                        "" => "
 <html>
 <head>
@@ -947,7 +947,7 @@ function wiki_templates($install=false)
 {\$footer}
 </body>
 </html>",
-				/* Zusätzliche Spalten für Moderatoren */
+				/* ZusÃ¤tzliche Spalten fÃ¼r Moderatoren */
 					   "sort" => "
 		<td class=\"tcat\" width=\"5%\" >
 			<span class=\"smalltext\"><strong>{\$lang->order}</strong></span>
@@ -986,7 +986,7 @@ function wiki_templates($install=false)
 </form>
 <div style=\"float: left; margin-top: -20px;\">{\$sort}</div>
 <br />",
-				/* Elemente für Kategorie Hauptseite */
+				/* Elemente fÃ¼r Kategorie Hauptseite */
                        "table_element" => "
 <tr>
 	<td class=\"trow1\">
@@ -998,7 +998,7 @@ function wiki_templates($install=false)
 	{\$additional['sort']}
 	{\$additional['control']}
 </tr>",
-				/* Zusätzliche Elemente für Moderatoren */
+				/* ZusÃ¤tzliche Elemente fÃ¼r Moderatoren */
 					   "table_sort" => "
 	<td class=\"trow1\">
 		<span class=\"smalltext\"><input type=\"text\" name=\"disporder[{\$cid}]\" value=\"{\$category_sort}\" class=\"text_input align_center\" style=\"width: 80%; font-weight: bold;\" /></span>
@@ -1061,7 +1061,7 @@ function wiki_templates($install=false)
 {\$footer}
 </body>
 </html>",
-				/* Zusätzliche Spalten für Moderatoren */
+				/* ZusÃ¤tzliche Spalten fÃ¼r Moderatoren */
 					   "category_sort" => "
 		<td class=\"tcat\" width=\"5%\" >
 			<span class=\"smalltext\"><strong>{\$lang->order}</strong></span>
@@ -1070,7 +1070,7 @@ function wiki_templates($install=false)
 		<td class=\"tcat\" width=\"5%\" colspan=\"2\">
 			<span class=\"smalltext\"><strong>{\$lang->wiki_control}</strong></span>
 		</td>",
-				/* Elemente für Artikelauflistung, Kategore */
+				/* Elemente fÃ¼r Artikelauflistung, Kategore */
                        "category_table" => "
 <tr>
 	<td style=\"background: {\$background};\" class=\"trow1\">
@@ -1082,7 +1082,7 @@ function wiki_templates($install=false)
 	{\$additional['sort']}
 	{\$additional['control']}
 </tr>",
-				/* Zusätzliche Elemente für Moderatoren */
+				/* ZusÃ¤tzliche Elemente fÃ¼r Moderatoren */
 					   "category_table_sort" => "
 	<td style=\"background: {\$background};\" class=\"trow1\">
 		<span class=\"smalltext\"><input type=\"text\" name=\"disporder[{\$wiki['id']}]\" value=\"{\$wiki['Sort']}\" class=\"text_input align_center\" style=\"width: 80%; font-weight: bold;\" /></span>
@@ -1161,13 +1161,13 @@ function wiki_templates($install=false)
 				</table>
 			</td>
 		</tr>",
-				/* Bearbeiten/Löschen Link für User Infos */
+				/* Bearbeiten/LÃ¶schen Link fÃ¼r User Infos */
                        "header_edit" => "
 <td class=\"smalltext post_author_info\" width=\"165\">
 	<a href=\"{\$mybb->settings['bburl']}/wiki.php?action=article_edit&wid={\$wiki['id']}\"><img src=\"{\$settings['bburl']}/images/wiki_edit.gif\" alt=\"{\$lang->wiki_edit}\" title=\"{\$lang->wiki_edit}\" />{\$lang->wiki_edit}</a><br />
 	<a href=\"{\$mybb->settings['bburl']}/wiki.php?action=article_delete&wid={\$wiki['id']}\"><img src=\"{\$settings['bburl']}/images/wiki_delete.gif\" alt=\"{\$lang->wiki_delete}\" title=\"{\$lang->wiki_delete}\" />{\$lang->wiki_delete}</a>
 </td>",
-				/* Hinweis auf verborgen für User Infos */
+				/* Hinweis auf verborgen fÃ¼r User Infos */
                        "header_hidden" => "
 <tr>
 	<td colspan=\"3\">{\$lang->wiki_hidden}</td>
@@ -1314,7 +1314,7 @@ function wiki_templates($install=false)
 		<td class=\"trow1\">{\$rcategory}</td>
 		<td class=\"trow1\">{\$rother}</td>
 	</tr>",
-				/* Panel für Hauptseite */
+				/* Panel fÃ¼r Hauptseite */
                        "panel" => "
 <div class=\"wiki_panel\">
 {\$category_add}
@@ -1323,7 +1323,7 @@ function wiki_templates($install=false)
 <br />
 </div>
 <br />",
-				/* Panel für Artikelauflistung */
+				/* Panel fÃ¼r Artikelauflistung */
                        "panel_category" => "
 <div class=\"wiki_panel\">
 {\$category_add}
@@ -1333,7 +1333,7 @@ function wiki_templates($install=false)
 <br />
 </div>
 <br />",
-				/* Panel für Artikelanzeige */
+				/* Panel fÃ¼r Artikelanzeige */
                        "panel_text" => "
 <div class=\"wiki_panel\">
 {\$article_add}
@@ -1344,13 +1344,13 @@ function wiki_templates($install=false)
 <br />
 </div>
 <br />",
-				/* Panel für Versionen (falls vorhanden) */
+				/* Panel fÃ¼r Versionen (falls vorhanden) */
                        "panel_versions" => "
 | <a href=\"{\$mybb->settings['bburl']}/{\$wiki_versions}\" title=\"{\$lang->wiki_versions}\">{\$lang->wiki_versions} ({\$vnumber})</a>",
-				/* Panel für Freischaltung von Artikeln */
+				/* Panel fÃ¼r Freischaltung von Artikeln */
                        "panel_unlock" => "
 | <a href=\"{\$mybb->settings['bburl']}/wiki.php?action=unlock&wid={\$id}\" title=\"{\$lang->wiki_unlock}\">{\$lang->wiki_unlock}</a>",
-				/* Hinzufügen von Artikeln */
+				/* HinzufÃ¼gen von Artikeln */
                        "add" => "
 <html>
 <head>
@@ -1475,7 +1475,7 @@ function wiki_templates($install=false)
 	{\$footer}
 </body>
 </html>",
-				/* Löschen von Artikeln */
+				/* LÃ¶schen von Artikeln */
                        "delete" => "
 <html>
 <head>
@@ -1515,7 +1515,7 @@ function wiki_templates($install=false)
 	{\$footer}
 </body>
 </html>",
-				/* Hinzufügen von Kategorien */
+				/* HinzufÃ¼gen von Kategorien */
                        "category_add" => "
 <html>
 <head>
@@ -1606,7 +1606,7 @@ function wiki_templates($install=false)
 	{\$footer}
 </body>
 </html>",
-				/* Löschen von Beiträgen */
+				/* LÃ¶schen von BeitrÃ¤gen */
                        "category_delete" => "
 <html>
 <head>
@@ -1646,7 +1646,7 @@ function wiki_templates($install=false)
 	{\$footer}
 </body>
 </html>",
-				/* Mülleimer - Blanko */
+				/* MÃ¼lleimer - Blanko */
                        "trash" => "
 <html>
 <head>
@@ -1662,7 +1662,7 @@ function wiki_templates($install=false)
 {\$footer}
 </body>
 </html>",
-				/* Mülleimer - Tabelle */
+				/* MÃ¼lleimer - Tabelle */
                        "trash_table" => "
 <table border=\"0\" cellspacing=\"{\$theme['borderwidth']}\" cellpadding=\"{\$theme['tablespace']}\" class=\"tborder\">
 	<tr>
@@ -1694,7 +1694,7 @@ function wiki_templates($install=false)
 		<td class=\"tcat\" width=\"10%\">
 			<span class=\"smalltext\"><strong>{\$lang->wiki_trash_delete}</strong></span>
 		</td>",
-				/* Mülleimer - Tabellenelemt */
+				/* MÃ¼lleimer - Tabellenelemt */
                        "trash_table_element" => "
 <tr>
 	<td class=\"trow1\">
@@ -1758,7 +1758,7 @@ function wiki_templates($install=false)
 {\$footer}
 </body>
 </html>",
-				/* Auswahl für Diff */
+				/* Auswahl fÃ¼r Diff */
 						"versions_diff_panel" => "
 <form action=\"wiki.php\" method=\"post\">
 <input type=\"hidden\" name=\"action\" value=\"version_diff\" />
@@ -1789,7 +1789,7 @@ function wiki_templates($install=false)
 		<td class=\"tcat\" width=\"5%\">
 			<span class=\"smalltext\"><strong>{\$lang->wiki_version_delete}</strong></span>
 		</td>",
-				/* Elemente für Versions Tabelle */
+				/* Elemente fÃ¼r Versions Tabelle */
                        "versions_table" => "
 <tr>
 	<td class=\"trow1\">
@@ -1880,7 +1880,7 @@ function wiki_templates($install=false)
 {\$footer}
 </body>
 </html>",
-				/* Elemente für Neue & Aktualisierte */
+				/* Elemente fÃ¼r Neue & Aktualisierte */
                        "new_element" => "
 <tr>
 	<td class=\"trow1\">
